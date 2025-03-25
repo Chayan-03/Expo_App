@@ -30,9 +30,8 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />      
-        <Stack.Screen name="index"/>
-        <Stack.Screen name="about"/>
+       
+        <Stack.Screen name="(drawer)" options={{ headerShown: false }} /> 
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
@@ -56,3 +55,5 @@ export default function RootLayout() {
 //     </GestureHandlerRootView>
 //   );
 // }<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+// <Stack.Screen name="index"/>
+//  <Stack.Screen name="about"/>
