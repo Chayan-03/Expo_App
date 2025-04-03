@@ -8,12 +8,12 @@ const Profile = () => {
       <View style={styles.headerContainer}>
         <View style={styles.profileHeader}>
           <Image 
-            source={require('../../assets/images/adaptive-icon.png')} 
+            source={require('../../assets/images/farmer.jpg')} 
             style={styles.profileImage}
           />
           <View style={styles.headerTextContainer}>
             <Text style={styles.nameText}>Rajesh Kumar</Text>
-            <Text style={styles.farmLocationText}>Madhya Pradesh, India</Text>
+            <Text style={styles.farmLocationText}>Haryana, India</Text>
           </View>
         </View>
       </View>
@@ -23,7 +23,7 @@ const Profile = () => {
           <Feather name="map-pin" size={24} color="#4CAF50" />
           <View style={styles.detailTextContainer}>
             <Text style={styles.detailLabel}>Farm Location</Text>
-            <Text style={styles.detailValue}>Hoshangabad District</Text>
+            <Text style={styles.detailValue}>Haryana</Text>
           </View>
         </View>
 

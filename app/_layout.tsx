@@ -37,23 +37,4 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import { Drawer } from 'expo-router/drawer';
 
-// export default function Layout() {
-//   return (
-//     <GestureHandlerRootView style={{ flex: 1 }}>
-//       <Drawer>
-//         <Drawer.Screen
-//           name="about" // This is the name of the page and must match the url from root
-//           options={{
-//             drawerLabel: 'About',
-//             title: 'About',
-//           }}
-//         />
-//       </Drawer>
-//     </GestureHandlerRootView>
-//   );
-// }<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-// <Stack.Screen name="index"/>
-//  <Stack.Screen name="about"/>

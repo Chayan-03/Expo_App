@@ -25,10 +25,10 @@ export default function DrawerLayout() {
                 }}
             />
             <Drawer.Screen
-                name="settings"
+                name="Self_help"
                 options={{
-                    drawerLabel: 'Settings',
-                    title: 'Settings',
+                    drawerLabel: 'Self_help',
+                    title: 'Self_help',
                     drawerIcon: ({ color }) => (
                         <Ionicons name="settings-outline" size={24} color={color} />
                     ),
