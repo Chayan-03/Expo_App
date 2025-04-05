@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { Stack, useNavigation } from 'expo-router';
 import { 
   View, 
   Text, 
@@ -39,6 +41,10 @@ const LoginScreen = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
 
   // Localized strings
   const strings = {
@@ -97,6 +103,7 @@ const LoginScreen = () => {
   };
 
   return (
+    
     <KeyboardAvoidingView 
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -214,6 +221,7 @@ const LoginScreen = () => {
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
+    
   );
 };
 
@@ -221,6 +229,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F0F4F8',
+    marginTop:35,
   },
   scrollContainer: {
     flexGrow: 1,

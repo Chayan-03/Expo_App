@@ -4,7 +4,7 @@ import {
   ChevronRight, Video, Tractor, FileText, PlayCircle, 
   CloudRain, Calculator, Bell, Crop, BookOpen, HeartHandshake 
 } from 'lucide-react-native';
-
+import { Stack } from 'expo-router';
 const governmentSchemes = [
   {
     id: 1,
@@ -38,6 +38,12 @@ const cropAdvisories = [
     title: 'Soil Health Management',
     description: 'Tips for maintaining soil fertility and improving yield',
     icon: <Crop color="#27ae60" size={24} />
+  },
+  {
+    id: 3,
+    title: 'Crop Disease Prevention',
+    description: 'Recommended Disease Prevention techniques for Summer season',
+    icon: <Crop color="#2980b9" size={24} />
   }
 ];
 
@@ -46,14 +52,14 @@ const latestMachinery = [
     id: 1,
     name: 'Smart Tractor X2000',
     description: 'Advanced GPS-enabled tractor with precision farming features',
-    image: 'https://via.placeholder.com/200x150',
+    image: 'https://4.imimg.com/data4/KJ/BY/MY-14831048/john-deere-5050d-tractor-500x500.jpg',
     price: '₹12,50,000'
   },
   {
     id: 2,
     name: 'Solar-Powered Irrigation Pump',
     description: 'Eco-friendly irrigation solution for small landholdings',
-    image: 'https://via.placeholder.com/200x150',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFdgXwgPDIL-vRNrM35dOPH8d0mBfhLSKUoA&s',
     price: '₹85,000'
   }
 ];
@@ -63,16 +69,31 @@ const youtubeVideos = [
     id: 1,
     title: 'Modern Farming Techniques in India',
     channel: 'Krishi Vibhag',
-    thumbnailUrl: 'https://via.placeholder.com/300x200',
-    videoUrl: 'https://www.youtube.com/watch?v=example'
+    thumbnailUrl: 'https://img.youtube.com/vi/_20zC-doDvs/maxresdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=_20zC-doDvs'
   },
   {
     id: 2,
     title: 'Sustainable Agriculture Practices',
     channel: 'Agricultural Ministry',
     thumbnailUrl: 'https://via.placeholder.com/300x200',
-    videoUrl: 'https://www.youtube.com/watch?v=example'
+    videoUrl: 'https://www.youtube.com/watch?v=dCIcB1iqTGI'
+  },
+  {
+    id: 3,
+    title: 'Mango Farming Agriculture Practices',
+    channel: 'DD Kisan',
+    thumbnailUrl: 'https://via.placeholder.com/300x200',
+    videoUrl: 'https://www.youtube.com/watch?v=2AzQB2iMJWs'
+  },
+  {
+    id: 4,
+    title: 'Budget 2025 for Farmers and Agriculture',
+    channel: 'DD Kisan',
+    thumbnailUrl: 'https://via.placeholder.com/300x200',
+    videoUrl: 'https://www.youtube.com/watch?v=-xsTa2UkU7w'
   }
+  
 ];
 
 const languageResources = [
@@ -198,6 +219,7 @@ const FarmersDashboard: React.FC = () => {
   );
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerTitle}>किसान सेवा (Kisan Seva)</Text>
@@ -272,6 +294,7 @@ const FarmersDashboard: React.FC = () => {
         {selectedSection === 'resources' && renderLanguageResources()}
       </ScrollView>
     </View>
+  
   );
 };
 
@@ -473,7 +496,7 @@ const styles = StyleSheet.create({
   },
   videoThumbnail: {
     width: 100,
-    height: 80,
+    height: 10,
     borderRadius: 8,
   },
   videoTextContainer: {

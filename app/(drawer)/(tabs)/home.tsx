@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Stack, useNavigation } from 'expo-router';
+
+
+
 import { 
   View, 
   Text, 
@@ -72,6 +76,11 @@ interface WeatherData {
 }
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [language, setLanguage] = useState<'hi' | 'en'>('en');

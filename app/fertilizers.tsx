@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // For icons (install @expo/vector-icons if not already)
-
+import { Ionicons } from '@expo/vector-icons'; 
+import { Stack, useNavigation } from 'expo-router';
+import { useEffect } from 'react';
 interface Fertilizer {
   id: string;
   name: string;
@@ -13,7 +14,10 @@ interface Fertilizer {
 }
 
 const FertilizerPage = () => {
-  // Sample data for fertilizers/manures (you can fetch this from an API later)
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
   const [fertilizers, setFertilizers] = useState([
     {
       id: '1',
@@ -84,6 +88,8 @@ const FertilizerPage = () => {
 
   return (
     <View style={styles.container}>
+    <Stack.Screen options={{ title: 'Buy Fertilizers' }} />
+
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerText}>Fertilizers & Manures</Text>
@@ -116,6 +122,7 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#2e7d32', // Green theme for agriculture
+    marginTop: 35,
     padding: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',

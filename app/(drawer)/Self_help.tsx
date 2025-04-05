@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Stack, useNavigation } from 'expo-router';
+
+import { useEffect } from 'react';
 import { 
   View, 
   Text, 
@@ -57,6 +60,11 @@ const translations = {
 };
 
 const SelfHelpGroupsPage = () => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
   const [language, setLanguage] = useState<'english' | 'hindi'>('english');
   const [isCreateGroupModalVisible, setCreateGroupModalVisible] = useState(false);
   const [isConnectModalVisible, setConnectModalVisible] = useState(false);
@@ -354,7 +362,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 16
+        marginBottom: 16,
+        marginTop: 40
       },
       headerTitle: {
         fontSize: 24,

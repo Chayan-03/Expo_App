@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // For icons (install @expo/vector-icons if not already)
+import { Ionicons } from '@expo/vector-icons'; 
 
+import { Stack, useNavigation } from 'expo-router';
+
+import { useEffect } from 'react';
 interface StorageHouse {
   id: string;
   owner: string;
@@ -15,11 +18,16 @@ interface StorageHouse {
 }
 
 const StorageHousesPage = () => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
   const [storageHouses, setStorageHouses] = useState<StorageHouse[]>([
     {
       id: '1',
       owner: 'Ramesh Patel',
-      location: 'Ahmedabad, Gujarat',
+      location: 'Hisaar, Haryana',
       capacity: '5000 Quintals',
       type: 'Cold Storage',
       rent: '₹0.50 / Quintal / Day',
@@ -30,7 +38,7 @@ const StorageHousesPage = () => {
     {
       id: '2',
       owner: 'Suresh Kumar',
-      location: 'Ludhiana, Punjab',
+      location: 'Rewari, Haryana',
       capacity: '3000 Quintals',
       type: 'Dry Storage',
       rent: '₹0.30 / Quintal / Day',
@@ -41,7 +49,7 @@ const StorageHousesPage = () => {
     {
       id: '3',
       owner: 'Priya Sharma',
-      location: 'Nashik, Maharashtra',
+      location: 'Ludhiana, Punjab',
       capacity: '7000 Quintals',
       type: 'Cold Storage',
       rent: '₹0.60 / Quintal / Day',
@@ -52,7 +60,7 @@ const StorageHousesPage = () => {
     {
       id: '4',
       owner: 'Amit Singh',
-      location: 'Varanasi, Uttar Pradesh',
+      location: 'Anand Vihar, Delhi NCR',
       capacity: '4000 Quintals',
       type: 'Dry Storage',
       rent: '₹0.25 / Quintal / Day',
@@ -103,6 +111,8 @@ const StorageHousesPage = () => {
 
   return (
     <View style={styles.container}>
+        <Stack.Screen options={{ title: 'Rent Storage' }} />
+      
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerText}>Storage Houses</Text>
@@ -136,6 +146,7 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: '#2e7d32', // Green theme for agriculture
     padding: 15,
+    marginTop:35,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

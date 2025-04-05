@@ -1,8 +1,17 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { Stack, useNavigation } from 'expo-router';
+
+import { useEffect } from 'react';
 
 const Profile = () => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
@@ -74,6 +83,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    marginTop:35,
+    padding:15
   },
   profileHeader: {
     flexDirection: 'row',
