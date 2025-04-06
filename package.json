@@ -33,6 +33,7 @@
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "eas-cli": "^16.2.1",
     "expo": "~52.0.40",
     "expo-application": "^6.0.2",
     "expo-auth-session": "^6.0.3",

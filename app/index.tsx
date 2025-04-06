@@ -49,7 +49,7 @@ const LoginScreen = () => {
   // Localized strings
   const strings = {
     hi: {
-      title: 'किसान डिजिटल प्लेटफॉर्म',
+      title: 'एग्रोसेतु',
       subtitle: 'अपनी कृषि यात्रा शुरू करें',
       emailPlaceholder: 'ईमेल',
       passwordPlaceholder: 'पासवर्ड',
@@ -59,7 +59,7 @@ const LoginScreen = () => {
       toggleSignup: 'खाता नहीं है? साइन अप करें'
     },
     en: {
-      title: 'Farmer Digital Platform',
+      title: 'KrishiSetu',
       subtitle: 'Start Your Agricultural Journey',
       emailPlaceholder: 'Email',
       passwordPlaceholder: 'Password',
